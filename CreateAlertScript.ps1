@@ -2,26 +2,26 @@ Import-Module AzureRM
 Import-Module AzureRM.Insights
 
 #UPDATE THIS 
-$username = "YOUR CREDS" 
-$myPassword = "YOUR CREDS"
+$username = "rmdoliveira.externo@creditoagricola.pt" 
+$myPassword = "VPCLUroJ.$L0c4l$*"
 #UPDATE THIS
 
 #Subscription and Directory IDs
-$subscriptionID = "YOUR SUB ID"
-$tenantId = "YOUR DIRECTORY ID" 
+$subscriptionID = "464619d0-ce5e-4083-ac6e-92fd3bccf937"
+$tenantId = "cd49f469-eabf-4bb1-8520-4991392c368b" 
 
 #Login to the portal
 $SecurePassword = $myPassword | ConvertTo-SecureString -AsPlainText -Force 
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $SecurePassword 
-$SubscriptionName = "Microsoft Partner Network"
+$SubscriptionName = "DSP-Infra-MG"
 Login-AzureRmAccount -Credential $cred -Tenant $tenantId -SubscriptionName $SubscriptionName
 
 #Resource Group
-$resourceGroupName = "YOUR RESOURCE GROUP"
+$resourceGroupName = "ne-mg-AlertsTest-oms-rg"
 
 #File Paths. I used this path you can choose any other.
-$templateFilePath = "C:\Templates\template.json"
-$parametersFilePath = "C:\Templates\parameters.json"
+$templateFilePath = "C:\Users\c89597375\OneDrive\SCOM\Deploy_Azure\azuredeploy\azuredeploy.json"
+$parametersFilePath = "C:\Users\c89597375\OneDrive\SCOM\Deploy_Azure\azuredeploy\azuredeploy.parameters.json"
 
 ################## VIRTUAL MACHINES RESOURCES ###########################################################################
 #Get Resources
